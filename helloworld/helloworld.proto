@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+// たぶんjavaにコンパイルする時の変数。
+// javaパッケージのドメインの命名がよくわっかんないからとりあえずコメアウト
+//option java_multiple_files = true;
+//option java_package = "io.grpc.examples.helloworld";
+//option java_outer_classname = "HelloWorldProto";
+
+package helloworld;
+
+// HelloRequest型を貰ったらSayHelloを実行(RPC)。
+// HelloReply型を返す…っていう認識で合ってる?
+service Greeter {
+    rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+message HelloRequest {
+    string name = 1;
+}
+
+message HelloReply {
+    string message = 1;
+}
